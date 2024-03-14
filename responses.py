@@ -22,9 +22,9 @@ def get_response(user_input: str, user_id: str) -> str:
         return get_inventory(user_id)
 
     elif '?add_item' in lowered:
-        item, amount, amount_index = split_command(user_input, "?add_item")
+        item, amount = split_command(user_input, "?add_item")
         return add_item(user_id, item, amount)
 
     elif '?remove_item' in lowered:
-        item, amount, amount_index = split_command(user_input, "?remove_item")
+        item, amount = split_command(user_input, "?remove_item")
         return del_item(user_id, item, amount)
